@@ -379,7 +379,8 @@ namespace AForge.Robotics.Surveyor
                     // abort thread if it can not be stopped
                     if ( thread.Join( 0 ) == false )
                     {
-                        thread.Abort( );
+                        thread.Interrupt( );
+                        thread.Join( );
                     }
 
                     thread = null;

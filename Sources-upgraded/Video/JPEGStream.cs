@@ -406,7 +406,10 @@ namespace AForge.Video
 			if ( this.IsRunning )
 			{
                 stopEvent.Set( );
-                thread.Abort( );
+                //thread.Abort( );
+                thread.Interrupt();
+                thread.Join();
+
 				WaitForStop( );
 			}
 		}

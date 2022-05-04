@@ -677,7 +677,10 @@ namespace AForge.Video.DirectShow
         {
             if ( this.IsRunning )
             {
-                thread.Abort( );
+                //thread.Abort( );
+                thread.Interrupt();
+                thread.Join();
+
                 WaitForStop( );
             }
         }

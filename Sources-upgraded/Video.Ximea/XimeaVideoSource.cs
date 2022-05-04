@@ -315,7 +315,9 @@ namespace AForge.Video.Ximea
             {
                 if ( tempThread.Join( 0 ) == false )
                 {
-                    tempThread.Abort( );
+                    //tempThread.Abort( );
+                    tempThread.Interrupt();
+
                     tempThread.Join( );
                 }
                 Free( );

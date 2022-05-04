@@ -283,7 +283,10 @@ namespace AForge.Robotics.Surveyor
         {
             if ( this.IsRunning )
             {
-                thread.Abort( );
+                //thread.Abort( );
+                thread.Interrupt( );    
+                thread.Join();
+
                 WaitForStop( );
             }
         }

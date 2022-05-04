@@ -378,7 +378,9 @@ namespace AForge.Video.Kinect
                 stopEvent.Set( );
                 if ( !updateStatusThread.Join( 2000 ) )
                 {
-                    updateStatusThread.Abort( );
+                    //updateStatusThread.Abort( );
+                    updateStatusThread.Interrupt();
+                    updateStatusThread.Join();
                 }
 
                 stopEvent.Close( );
